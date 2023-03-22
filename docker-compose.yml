@@ -1,0 +1,18 @@
+version: "1"
+services:
+        psqlos:
+             image: postgres
+             environment:
+                    POSTGRES_PASSWORD: 131120
+             
+             restart: always
+             
+        flaskos:
+             image: emppython
+             restart: always
+             ports: 
+                    - 7845:7845 
+             depends_on:
+                    - psqlos
+                      
+                   
